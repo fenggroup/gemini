@@ -1,3 +1,6 @@
+% VS Code Magic Command to use lualatex as the compiler
+% !TeX program = lualatex
+
 % Gemini theme
 % https://github.com/anishathalye/gemini
 
@@ -9,13 +12,14 @@
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[size=custom,width=120,height=72,scale=1.0]{beamerposter}
+\usepackage[size=custom,width=100,height=75,scale=1.0]{beamerposter}
 \usetheme{gemini}
-\usecolortheme{gemini}
+\usecolortheme{umich}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{subcaption}  % for figures with multiple images
 \pgfplotsset{compat=1.14}
 
 % ====================
@@ -35,20 +39,22 @@
 % Title
 % ====================
 
-\title{Some fancy title: followed by some more text}
+\title{Some fancy title: followed by some more text 
+      \newline a second line in the title}   % optionally, we can use two lines if the title is too long.
 
-\author{Alyssa P. Hacker \inst{1} \and Ben Bitdiddle \inst{2} \and Lem E. Tweakit \inst{2}}
+\author{Louise Belcher \inst{1} \and Fred Feng \inst{1}}
 
-\institute[shortinst]{\inst{1} Some Institute \samelineand \inst{2} Another Institute}
+\institute[shortinst]{\inst{1} University of Michigan-Dearborn, Department of Industrial and Manufacturing Systems Engineering}
+% \institute[shortinst]{\inst{1} Some Institute \samelineand \inst{2} Another Institute}
 
 % ====================
 % Footer (optional)
 % ====================
 
 \footercontent{
-  \href{https://www.example.com}{https://www.example.com} \hfill
-  ABC Conference 2025, New York --- XYZ-1234 \hfill
-  \href{mailto:alyssa.p.hacker@example.com}{alyssa.p.hacker@example.com}}
+  Feng Group website: \href{https://fenggroup.org/}{https://fenggroup.org/} \hfill
+  Transportation Research Board (TRB) Annual Meeting, 2025 \hfill
+  Contact: Dr. Fred Feng at \href{mailto:fredfeng@umich.edu}{fredfeng@umich.edu}}
 % (can be left out to remove footer)
 
 % ====================
@@ -56,8 +62,10 @@
 % ====================
 
 % use this to include logos on the left and/or right side of the header:
-% \logoright{\includegraphics[height=7cm]{logo1.pdf}}
-% \logoleft{\includegraphics[height=7cm]{logo2.pdf}}
+\logoleft{\includegraphics[height=10cm]{./images/UMDearborn.png}}
+\logoright{\includegraphics[height=10cm]{./images/sure.png}}
+
+
 
 % ====================
 % Body
@@ -73,30 +81,25 @@
 
   \begin{block}{A block title}
 
-    Some block contents, followed by a diagram, followed by a dummy paragraph.
+    Some block contents, followed by a figure, followed by a dummy paragraph.
 
     \begin{figure}
       \centering
-      \begin{tikzpicture}[scale=6]
-        \draw[step=0.25cm,color=gray] (-1,-1) grid (1,1);
-        \draw (1,0) -- (0.2,0.2) -- (0,1) -- (-0.2,0.2) -- (-1,0)
-          -- (-0.2,-0.2) -- (0,-1) -- (0.2,-0.2) -- cycle;
-      \end{tikzpicture}
-      \caption{A figure caption.}
+        \includegraphics[width=.4\textwidth]{./images/y_axis_2x.png}
+      \caption{XKCD Comic: Y-Axis (https://xkcd.com/2023/)}
     \end{figure}
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies
-    eget libero ac ullamcorper. Integer et euismod ante. Aenean vestibulum
-    lobortis augue, ut lobortis turpis rhoncus sed. Proin feugiat nibh a
-    lacinia dignissim. Proin scelerisque, risus eget tempor fermentum, ex
-    turpis condimentum urna, quis malesuada sapien arcu eu purus.
+    We can start each sentence with a new line.
+    This style is helpful to spot and avoid writing very long sentences, which are harder to read.
+    In the rendered document, a following sentence will follow the previous in the same paragraph.
+    
+    To start a new paragraph, simply add an empty line above the sentence.
 
   \end{block}
 
   \begin{block}{A block containing a list}
 
-    Nam vulputate nunc felis, non condimentum lacus porta ultrices. Nullam sed
-    sagittis metus. Etiam consectetur gravida urna quis suscipit.
+    An itemize (i.e., unordered) list is shown below. 
 
     \begin{itemize}
       \item \textbf{Mauris tempor} risus nulla, sed ornare
@@ -104,7 +107,7 @@
       \item \textbf{Dui ac pretium} morbi justo neque, ullamcorper
     \end{itemize}
 
-    Eget augue porta, bibendum venenatis tortor.
+    Some more text.
 
   \end{block}
 
@@ -113,23 +116,16 @@
     This block catches your eye, so \textbf{important stuff} should probably go
     here.
 
-    Curabitur eu libero vehicula, cursus est fringilla, luctus est. Morbi
-    consectetur mauris quam, at finibus elit auctor ac. Aliquam erat volutpat.
-    Aenean at nisl ut ex ullamcorper eleifend et eu augue. Aenean quis velit
-    tristique odio convallis ultrices a ac odio.
 
     \begin{itemize}
-      \item \textbf{Fusce dapibus tellus} vel tellus semper finibus. In
-        consequat, nibh sed mattis luctus, augue diam fermentum lectus.
-      \item \textbf{In euismod erat metus} non ex. Vestibulum luctus augue in
-        mi condimentum, at sollicitudin lorem viverra.
+      \item \textbf{Fusce dapibus tellus} vel tellus semper finibus. 
+        In consequat, nibh sed mattis luctus, augue diam fermentum lectus.
+      \item \textbf{In euismod erat metus} Vestibulum luctus augue in mi condimentum, at sollicitudin lorem viverra.
       \item \textbf{Suspendisse vulputate} mauris vel placerat consectetur.
-        Mauris semper, purus ac hendrerit molestie, elit mi dignissim odio, in
-        suscipit felis sapien vel ex.
+        Mauris semper, purus ac hendrerit molestie, elit mi dignissim odio, in suscipit felis sapien vel ex.
     \end{itemize}
 
-    Aenean tincidunt risus eros, at gravida lorem sagittis vel. Vestibulum ante
-    ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
+    Some more text.
 
   \end{alertblock}
 
@@ -141,79 +137,50 @@
 
   \begin{block}{A block containing an enumerated list}
 
-    Vivamus congue volutpat elit non semper. Praesent molestie nec erat ac
-    interdum. In quis suscipit erat. \textbf{Phasellus mauris felis, molestie
-    ac pharetra quis}, tempus nec ante. Donec finibus ante vel purus mollis
-    fermentum. Sed felis mi, pharetra eget nibh a, feugiat eleifend dolor. Nam
-    mollis condimentum purus quis sodales. Nullam eu felis eu nulla eleifend
-    bibendum nec eu lorem. Vivamus felis velit, volutpat ut facilisis ac,
-    commodo in metus.
+    An enumerated (i.e., ordered) list is shown below. 
 
     \begin{enumerate}
-      \item \textbf{Morbi mauris purus}, egestas at vehicula et, convallis
-        accumsan orci. Orci varius natoque penatibus et magnis dis parturient
-        montes, nascetur ridiculus mus.
-      \item \textbf{Cras vehicula blandit urna ut maximus}. Aliquam blandit nec
-        massa ac sollicitudin. Curabitur cursus, metus nec imperdiet bibendum,
-        velit lectus faucibus dolor, quis gravida metus mauris gravida turpis.
-      \item \textbf{Vestibulum et massa diam}. Phasellus fermentum augue non
-        nulla accumsan, non rhoncus lectus condimentum.
+      \item The ingredients of a hamburger fall into place on a white screen, and Bob's hands appear underneath to hold it.
+      \item The other family members appear around him one at a time, beginning with Linda and ending with Louise.
+      \item Linda puts her arm around Bob, Tina stands expressionless, Gene plays a sound effect on his keyboard, and Louise poses for the camera.
     \end{enumerate}
 
   \end{block}
 
-  \begin{block}{Fusce aliquam magna velit}
+  \begin{block}{A block containing a figure with subfigures}
 
-    Et rutrum ex euismod vel. Pellentesque ultricies, velit in fermentum
-    vestibulum, lectus nisi pretium nibh, sit amet aliquam lectus augue vel
-    velit. Suspendisse rhoncus massa porttitor augue feugiat molestie. Sed
-    molestie ut orci nec malesuada. Sed ultricies feugiat est fringilla
-    posuere.
+    A figure that contains a figure with subfigures.
 
     \begin{figure}
       \centering
-      \begin{tikzpicture}
-        \begin{axis}[
-            scale only axis,
-            no markers,
-            domain=0:2*pi,
-            samples=100,
-            axis lines=center,
-            axis line style={-},
-            ticks=none]
-          \addplot[red] {sin(deg(x))};
-          \addplot[blue] {cos(deg(x))};
-        \end{axis}
-      \end{tikzpicture}
-      \caption{Another figure caption.}
+      \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=15cm]{./images/y_axis_2x.png}
+        \caption{caption for figure a}    % optional
+      \end{subfigure}
+      \hfill
+      \begin{subfigure}{0.49\textwidth}
+        \centering
+        \includegraphics[height=15cm]{./images/y_axis_2x.png}
+        \caption{caption for figure b}   % optional
+      \end{subfigure}
+      \caption{Caption for this figure}
     \end{figure}
 
   \end{block}
 
-  \begin{block}{Nam cursus consequat egestas}
+  \vspace{-1em}    % If needed, you can use vspace to manually adjust the vertical space.
 
-    Nulla eget sem quam. Ut aliquam volutpat nisi vestibulum convallis. Nunc a
-    lectus et eros facilisis hendrerit eu non urna. Interdum et malesuada fames
-    ac ante \textit{ipsum primis} in faucibus. Etiam sit amet velit eget sem
-    euismod tristique. Praesent enim erat, porta vel mattis sed, pharetra sed
-    ipsum. Morbi commodo condimentum massa, \textit{tempus venenatis} massa
-    hendrerit quis. Maecenas sed porta est. Praesent mollis interdum lectus,
-    sit amet sollicitudin risus tincidunt non.
+  \begin{block}{A block containing nested lists}
 
-    Etiam sit amet tempus lorem, aliquet condimentum velit. Donec et nibh
-    consequat, sagittis ex eget, dictum orci. Etiam quis semper ante. Ut eu
-    mauris purus. Proin nec consectetur ligula. Mauris pretium molestie
-    ullamcorper. Integer nisi neque, aliquet et odio non, sagittis porta justo.
+    You can also format text \textit{with italic} or \textbf{bold fonts} to emphasize certain words.
 
     \begin{itemize}
       \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
         sed est scelerisque, elementum mollis augue iaculis.
         \begin{itemize}
-          \item In sed est finibus, vulputate
-            nunc gravida, pulvinar lorem. In maximus nunc dolor, sed auctor eros
-            porttitor quis.
-          \item Fusce ornare dignissim nisi. Nam sit amet risus vel lacus
-            tempor tincidunt eu a arcu.
+          \item In sed est finibus, vulputate nunc gravida, pulvinar lorem.
+          \item Fusce ornare dignissim nisi. 
           \item Donec rhoncus vestibulum erat, quis aliquam leo
             gravida egestas.
         \end{itemize}
@@ -236,10 +203,10 @@
     A different kind of highlighted block.
 
     $$
-    \int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}
+    Y = \beta_0 + \beta_1 \cdot x + \epsilon
     $$
 
-    Interdum et malesuada fames $\{1, 4, 9, \ldots\}$ ac ante ipsum primis in
+    Interdum et malesuada fames $\{x_1, x_2, \cdots, x_n \}$ ac ante ipsum primis in
     faucibus. Cras eleifend dolor eu nulla suscipit suscipit. Sed lobortis non
     felis id vulputate.
 
@@ -259,11 +226,9 @@
 
   \end{exampleblock}
 
-  \begin{block}{Nullam vel erat at velit convallis laoreet}
+  \begin{block}{A block containing a table}
 
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
-    inceptos himenaeos. Phasellus libero enim, gravida sed erat sit amet,
-    scelerisque congue diam. Fusce dapibus dui ut augue pulvinar iaculis.
+    See the table below:
 
     \begin{table}
       \centering
@@ -298,7 +263,7 @@
 
   \begin{block}{References}
 
-    \nocite{*}
+    \nocite{*}   % adds everything in the bib file to the bibliography
     \footnotesize{\bibliographystyle{plain}\bibliography{poster}}
 
   \end{block}
