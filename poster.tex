@@ -42,9 +42,9 @@
 \title{Some fancy title: followed by some more text 
       \newline a second line in the title}   % optionally, we can use two lines if the title is too long.
 
-\author{Louise Belcher \inst{1} \and Fred Feng \inst{1}}
+\author{Louise Belcher \inst{1} \and Fred Feng \inst{2}}
 
-\institute[shortinst]{\inst{1} University of Michigan-Dearborn, Department of Industrial and Manufacturing Systems Engineering}
+\institute[shortinst]{\inst{1} Wagstaff School, Seymour's Bay \samelineand \inst{2} University of Michigan-Dearborn, Department of Industrial and Manufacturing Systems Engineering}
 % \institute[shortinst]{\inst{1} Some Institute \samelineand \inst{2} Another Institute}
 
 % ====================
@@ -83,7 +83,7 @@
 
   \begin{block}{A block title}
 
-    Some block contents, followed by a figure, followed by a dummy paragraph.
+    Some block contents, followed by a figure, followed by some dummy paragraphs.
 
     \begin{figure}
       \centering
@@ -91,11 +91,12 @@
       \caption{XKCD Comic: Y-Axis (https://xkcd.com/2023/)}
     \end{figure}
 
-    We can start each sentence with a new line.
-    This style is helpful to spot and avoid writing very long sentences, which are harder to read.
-    In the rendered document, a following sentence will follow the previous in the same paragraph.
+    It is recommended to start each sentence with a new line in the LaTeX editor.
+    This style improves the readability of the text in the editor,
+    and it is helpful to spot and avoid very long sentences, which are usually hard to read for your audience.
+    In the rendered document, all text lines without an empty line in between will be formatted in the same paragraph.
     
-    To start a new paragraph, simply add an empty line above the sentence.
+    To start a new paragraph, simply add an empty line above the first line of a new paragraph.
 
   \end{block}
 
@@ -104,27 +105,26 @@
     An itemize (i.e., unordered) list is shown below. 
 
     \begin{itemize}
-      \item \textbf{Mauris tempor} risus nulla, sed ornare
-      \item \textbf{Libero tincidunt} a duis congue vitae
-      \item \textbf{Dui ac pretium} morbi justo neque, ullamcorper
+      \item Roses are red,
+      \item Violets are blue,
+      \item Sugar is sweet,
+      \item and so are you.
     \end{itemize}
 
-    Some more text.
+    Here are some more text.
 
   \end{block}
 
   \begin{alertblock}{A highlighted block}
 
-    This block catches your eye, so \textbf{important stuff} should probably go
-    here.
-
+    This block catches your eye, so \textbf{important stuff} should probably go here.
+    We can format text \textit{with italic} or \textbf{bold fonts} to emphasize the words.
 
     \begin{itemize}
-      \item \textbf{Fusce dapibus tellus} vel tellus semper finibus. 
-        In consequat, nibh sed mattis luctus, augue diam fermentum lectus.
-      \item \textbf{In euismod erat metus} Vestibulum luctus augue in mi condimentum, at sollicitudin lorem viverra.
-      \item \textbf{Suspendisse vulputate} mauris vel placerat consectetur.
-        Mauris semper, purus ac hendrerit molestie, elit mi dignissim odio, in suscipit felis sapien vel ex.
+      \item Roses are \textit{red},
+      \item Violets are \textbf{blue},
+      \item Sugar is \texttt{sweet},
+      \item and so are you.
     \end{itemize}
 
     Some more text.
@@ -147,11 +147,12 @@
       \item Linda puts her arm around Bob, Tina stands expressionless, Gene plays a sound effect on his keyboard, and Louise poses for the camera.
     \end{enumerate}
 
+
   \end{block}
 
   \begin{block}{A block containing a figure with subfigures}
 
-    A figure that contains a figure with subfigures.
+    A figure that contains a figure with two subfigures.
 
     \begin{figure}
       \centering
@@ -171,26 +172,27 @@
 
   \end{block}
 
-  \vspace{-1em}    % If needed, you can use vspace to manually adjust the vertical space.
+  \vspace{-1em}    % If preferred, we can manually adjust the vertical space.
 
   \begin{block}{A block containing nested lists}
 
-    You can also format text \textit{with italic} or \textbf{bold fonts} to emphasize certain words.
+    Some text here.
 
-    \begin{itemize}
-      \item \textbf{Sed consequat} id ante vel efficitur. Praesent congue massa
-        sed est scelerisque, elementum mollis augue iaculis.
-        \begin{itemize}
-          \item In sed est finibus, vulputate nunc gravida, pulvinar lorem.
-          \item Fusce ornare dignissim nisi. 
-          \item Donec rhoncus vestibulum erat, quis aliquam leo
-            gravida egestas.
-        \end{itemize}
-      \item \textbf{Sed luctus, elit sit amet} dictum maximus, diam dolor
-        faucibus purus, sed lobortis justo erat id turpis.
-      \item \textbf{Pellentesque facilisis dolor in leo} bibendum congue.
-        Maecenas congue finibus justo, vitae eleifend urna facilisis at.
-    \end{itemize}
+    \begin{enumerate}
+      \item A love poem
+          \begin{itemize}
+            \item Roses are \textit{red},
+            \item Violets are \textbf{blue},
+            \item Sugar is \texttt{sweet},
+            \item and so are you.
+          \end{itemize}
+      \item Old pond
+          \begin{itemize}
+            \item old pond
+            \item frog leaps in
+            \item water's sound
+          \end{itemize}
+    \end{enumerate}
 
   \end{block}
 
@@ -203,6 +205,8 @@
   \begin{exampleblock}{A highlighted block containing some math}
 
     A different kind of highlighted block.
+
+    We can insert a math formula wrapped with a pair of double dollar signs.
 
     $$
     Y = \beta_0 + \beta_1 \cdot x + \epsilon

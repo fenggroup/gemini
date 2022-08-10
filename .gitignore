@@ -12,4 +12,6 @@
 *.toc
 *.fdb_latexmk
 *.fls
-*.gz
+
+*.synctex.gz
+.vscode/
